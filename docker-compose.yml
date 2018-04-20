@@ -1,0 +1,30 @@
+version: "3"
+
+networks:
+  tika-service:
+
+services:
+  # tika:
+  #   image: logicalspark/docker-tikaserver
+  #   container_name: tika
+  #   restart: always
+  #   expose:
+  #     - 9998
+  #   networks:
+  #     - tika-service
+
+  nginx:
+    build:
+      context: .
+      args:
+        tika_version: 1.17
+    container_name: tika-app
+    # restart: always
+    # depends_on:
+    #   - tika
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - tika-service
+    # command: ls -al /etc/nginx

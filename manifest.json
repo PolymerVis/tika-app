@@ -1,0 +1,9 @@
+{
+  "name": "tika-app",
+  "short_name": "tika-app",
+  "description": "Polymer 3.0 app for Apache Tika.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#3f51b5",
+  "background_color": "#3f51b5"
+}

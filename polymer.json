@@ -1,0 +1,25 @@
+{
+  "entrypoint": "index.html",
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/*.js"
+  ],
+  "npm": true,
+  "moduleResolution": "node",
+  "lint": {
+    "rules": ["polymer-3"]
+  },
+  "builds": [
+    {
+      "js": {
+        "minify": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      }
+    }
+  ]
+}

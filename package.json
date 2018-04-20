@@ -1,0 +1,26 @@
+{
+  "name": "tika-app",
+  "description": "Polymer 3.0 app for Apache Tika.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build:polymer": "npx polymer build && node workbox-gen.js",
+    "deploy": "npm run build:polymer && heroku container:push web"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.0.0",
+    "@polymer-vis/file-drop-zone": "^3.0.0-pre.12a",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.12",
+    "@polymer/iron-icon": "^3.0.0-pre.12",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.12",
+    "@polymer/paper-button": "^3.0.0-pre.12",
+    "@polymer/paper-fab": "^3.0.0-pre.12",
+    "@polymer/paper-progress": "^3.0.0-pre.12",
+    "@polymer/paper-toast": "^3.0.0-pre.12",
+    "@polymer/polymer": "^3.0.0-pre.12"
+  },
+  "devDependencies": {
+    "polymer-cli": "^1.7.0-pre.13",
+    "wct-browser-legacy": "^0.0.1-pre.11",
+    "workbox-build": "^3.1.0"
+  }
+}
