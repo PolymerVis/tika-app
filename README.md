@@ -4,7 +4,7 @@ tika-app
 [![Build Status](https://travis-ci.org/PolymerVis/tika-app.svg?branch=master)](https://travis-ci.org/PolymerVis/tika-app)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-`tika-app` is a Polymer 3 app for [Apache Tika](https://tika.apache.org/), where text and meta-data can be extracted from various formats (e.g. `doc`, `docx`, `pdf`, `images`, ...).
+`tika-app` is a Polymer 3 app to extract text from various sources (e.g. `doc`, `docx`, `pdf`, `images`, ...) with [Apache Tika](https://tika.apache.org/).
 
 The demo is hosted at  [Heroku](https://tika-app.herokuapp.com).
 

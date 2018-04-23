@@ -1,13 +1,35 @@
 const workboxBuild = require('workbox-build');
-workboxBuild.generateSW({
-  swDest: './build/default/sw.js',
-  importWorkboxFrom: 'local',
-  directoryIndex: 'index.html',
-  globDirectory: '.',
-  globPatterns: ['./build/default/**\/*.{js,css,html,png}'],
-}).then(({count, size}) => {
-  console.log(`Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`);
-})
-.catch((err) => {
+const swDest = './build/default/sw.js';
+workboxBuild
+  .generateSW({
+    swDest,
+    importWorkboxFrom: 'local',
+    directoryIndex: 'index.html',
+    globDirectory: './build/default',
+    globPatterns: ['**/*.{js,css,html,png}'],
+    runtimeCaching: [
+      {
+        // Match any same-origin request that contains 'api'.
+        urlPattern: /node_modules/,
+        // Apply a network-first strategy.
+        handler: 'cacheFirst',
+        options: {
+          expiration: {
+            maxEntries: 20,
+            maxAgeSeconds: 86400
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      }
+    ]
+  })
+  .then(({ count, size }) => {
+    console.log(
+      `Generated ${swDest}, which will precache ${count} files, totaling ${size} bytes.`
+    );
+  })
+  .catch(err => {
     console.error(`Unable to generate a new service worker.`, err);
-});
+  });

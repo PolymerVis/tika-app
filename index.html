@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>tika-app</title>
-    <meta name="description" content="Polymer 3.0 app for Apache Tika.">
+    <meta name="description" content="Polymer 3.0 app to extract text from documents and images with Apache Tika.">
 
     <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
 
-    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <!-- http2 push -->
+    <link rel="preload" href="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" as="script">
+
     <script>
       if ('serviceWorker' in navigator) {
         // Register a service worker hosted at the root of the
@@ -24,14 +26,49 @@
         console.log('Service workers are not supported.');
       }
     </script>
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script type="module" src="/src/tika-app/tika-app.js"></script>
   </head>
   <body>
     <style>
       html {
+        font-family: sans-serif;
+        text-align: justify;
         background-color: #eaeaea;
       }
+      span.block {
+        font-style: italic;
+        font-weight: bolder;
+        padding: 1px;
+      }
+      .container {
+        max-width: 600px;
+      }
+      h1 {
+        color: #444;
+        font-size: 40px;
+        font-weight: lighter;
+        margin-bottom: 5px;
+      }
+      p {
+        color: #555;
+      }
     </style>
-    <tika-app></tika-app>
+    <center>
+      <a href="https://github.com/PolymerVis/tika-app"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+
+      <section class="container">
+        <h1>Tika-App</h1>
+
+        <p>allows you to extract text from sources such as,
+          <span class="block">Microsoft word documents</span>,
+          <span class="block">PDFs</span>, <span class="block">JPEG</span>,
+          and <span class="block"> PNG Images</span>
+          with <span class="block">Apache Tika<sup>TM</sup></span>.
+        </p>
+        <tika-app></tika-app>
+      </section>
+    </center>
+
   </body>
 </html>
