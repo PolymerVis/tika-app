@@ -14,10 +14,6 @@ workboxBuild
         // Apply a network-first strategy.
         handler: 'cacheFirst',
         options: {
-          expiration: {
-            maxEntries: 20,
-            maxAgeSeconds: 86400
-          },
           cacheableResponse: {
             statuses: [0, 200]
           }
