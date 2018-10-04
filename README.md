@@ -2,7 +2,7 @@ tika-app
 ===
 [![Polymer version](https://img.shields.io/badge/polymer-3.0.0--pre.12-blue.svg)](https://shields.io/)
 [![Build Status](https://travis-ci.org/PolymerVis/tika-app.svg?branch=master)](https://travis-ci.org/PolymerVis/tika-app)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Greenkeeper badge](https://badges.greenkeeper.io/PolymerVis/tika-app.svg)](https://greenkeeper.io/)
 
 `tika-app` is a Polymer 3 app to extract text from various sources (e.g. `doc`, `docx`, `pdf`, `images`, ...) with [Apache Tika](https://tika.apache.org/).
 
